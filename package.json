@@ -1,0 +1,40 @@
+{
+  "name": "custom-dnd-figs-workshop-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [
+    "landing",
+    "craft",
+    "3d",
+    "ecommerce"
+  ],
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/vladcheck/custom-dnd-figs-workshop-site"
+  },
+  "author": {
+    "name": "Vladimir"
+  },
+  "license": "ISC",
+  "packageManager": "pnpm@10.30.0",
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "autoprefixer": "^10.4.24",
+    "gh-pages": "^6.3.0",
+    "postcss-nested": "^7.0.2",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.2.0"
+  }
+}
