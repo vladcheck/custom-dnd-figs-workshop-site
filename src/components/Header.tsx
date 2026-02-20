@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function Header() {
 	return (
 		<header className='flex gap-6 items-center border-b-gray-600 px-6 py-4 min-h-15'>
@@ -10,14 +12,14 @@ export default function Header() {
 					alt='logo'
 				/>
 				<h1 className='text-2xl cormorant-unicase-bold'>
-					<a className='text-nowrap' href='#'>
+					<Link className='text-nowrap' to='/'>
 						Figure Workshop
-					</a>
+					</Link>
 				</h1>
 			</div>
 			<button
 				onClick={() => {
-					window.location.href = "#place-order";
+					window.location.href = "/#place-order";
 				}}
 				className='px-1.5 py-1 bg-orange-400 hover:cursor-pointer uppercase'
 			>

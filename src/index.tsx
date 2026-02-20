@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import LandingPage from "./pages/LandingPage";
 import Layout from "./layouts/Layout";
+import NotFound from "./pages/404";
 
 const root = createRoot(document.getElementById("root")!);
 root.render(
@@ -10,6 +11,7 @@ root.render(
 		<Routes>
 			<Route element={<Layout />}>
 				<Route path='/' element={<LandingPage />} />
+				<Route path='*' element={<NotFound />} />
 			</Route>
 		</Routes>
 	</BrowserRouter>,
