@@ -1,17 +1,19 @@
-import Footer from "./components/Footer";
-import GoToTopButton from "./components/GoToTopButton";
-import Header from "./components/Header";
-import SideNav from "./components/SideNav";
-import EditorDemoSection from "./sections/EditorDemoSection";
-import FAQ from "./sections/FAQ";
-import HeroSection from "./sections/HeroSection";
-import HowItHappensSection from "./sections/HowItHappensSection";
-import PhotoGallerySection from "./sections/PhotoGallerySection";
-import PlaceOrderSection from "./sections/PlaceOrderSection";
-import TeamSection from "./sections/TeamSection";
+import Footer from "../components/Footer";
+import GoToTopButton from "../components/GoToTopButton";
+import Header from "../components/Header";
+import SideNav from "../components/SideNav";
+import EditorDemoSection from "../sections/EditorDemoSection";
+import FAQ from "../sections/FAQ";
+import HeroSection from "../sections/HeroSection";
+import HowItHappensSection from "../sections/HowItHappensSection";
+import PhotoGallerySection from "../sections/PhotoGallerySection";
+import PlaceOrderSection from "../sections/PlaceOrderSection";
+import TeamSection from "../sections/TeamSection";
+
+type LinkMeta = { id: string; title: string };
 
 export const SECTIONS: {
-	[key: string]: { id: string; title: string };
+	[key: string]: LinkMeta;
 } = {
 	hero: { id: "hero", title: "Погнали" },
 	editorDemo: {
@@ -25,10 +27,9 @@ export const SECTIONS: {
 	placeOrder: { id: "place-order", title: "Оформи заказ" },
 };
 
-export default function App() {
+export default function LandingPage() {
 	return (
 		<>
-			<Header />
 			<GoToTopButton />
 			<SideNav sections={Object.values(SECTIONS)} />
 			<main className='w-full flex-1 bg-gray-950 flex flex-col justify-center items-center p-4 gap-8'>
@@ -40,7 +41,6 @@ export default function App() {
 				<FAQ id={SECTIONS.faq!.id} />
 				<PlaceOrderSection id={SECTIONS.placeOrder!.id} />
 			</main>
-			<Footer id='footer' />
 		</>
 	);
 }
