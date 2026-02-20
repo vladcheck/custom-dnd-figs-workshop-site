@@ -1,0 +1,48 @@
+@use "tailwindcss"
+
+.cormorant-unicase-light
+	font-family: "Cormorant Unicase", serif
+	font-weight: 300
+	font-style: normal
+
+.cormorant-unicase-regular
+	font-family: "Cormorant Unicase", serif
+	font-weight: 400
+	font-style: normal
+
+.cormorant-unicase-medium
+	font-family: "Cormorant Unicase", serif
+	font-weight: 500
+	font-style: normal
+
+.cormorant-unicase-semibold
+	font-family: "Cormorant Unicase", serif
+	font-weight: 600
+	font-style: normal
+
+.cormorant-unicase-bold
+	font-family: "Cormorant Unicase", serif
+	font-weight: 700
+	font-style: normal
+
+.aside-shown
+	transform: translate(9999px)
+
+.label-input-container:has(*:required)
+	position: relative
+	&::after
+		position: absolute
+		content: "*"
+		font-family: sans-serif
+		font-size: 1.2rem
+		color: red
+		right: 4px
+		top: 10px
+
+input
+	&:valid:not(:focus)
+		border: 1px solid green
+	&:invalid:not(:focus)
+		border: 1px solid red
+	&:focus
+		border: none
