@@ -2,6 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
@@ -19,9 +20,9 @@
 		<script src="./src/index.tsx" type="module" defer></script>
 		<title>Figure workshop</title>
 	</head>
-	<body>
+	<body class="focus-within:scroll-smooth!">
 		<div
-			class="flex flex-col w-full min-h-dvh bg-black text-white font-[serif] scroll-smooth relative"
+			class="flex flex-col w-full min-h-dvh bg-black text-white font-[serif] overflow-y-scroll relative"
 			id="root"
 		></div>
 	</body>

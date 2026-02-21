@@ -1,14 +1,13 @@
-import Footer from "../components/Footer";
 import GoToTopButton from "../components/GoToTopButton";
-import Header from "../components/Header";
+import Main from "../components/Main";
 import SideNav from "../components/SideNav";
-import EditorDemoSection from "../sections/EditorDemoSection";
-import FAQ from "../sections/FAQ";
-import HeroSection from "../sections/HeroSection";
-import HowItHappensSection from "../sections/HowItHappensSection";
-import PhotoGallerySection from "../sections/PhotoGallerySection";
-import PlaceOrderSection from "../sections/PlaceOrderSection";
-import TeamSection from "../sections/TeamSection";
+import EditorDemoSection from "./sections/EditorDemoSection";
+import FAQ from "./sections/FAQ";
+import HeroSection from "./sections/HeroSection";
+import HowItHappensSection from "./sections/HowItHappensSection";
+import PhotoGallerySection from "./sections/PhotoGallerySection";
+import PlaceOrderSection from "./sections/PlaceOrderSection";
+import TeamSection from "./sections/TeamSection";
 
 type LinkMeta = { id: string; title: string };
 
@@ -32,7 +31,7 @@ export default function LandingPage() {
 		<>
 			<GoToTopButton />
 			<SideNav sections={Object.values(SECTIONS)} />
-			<main className='w-full flex-1 bg-gray-950 flex flex-col justify-center items-center p-4 gap-8'>
+			<Main>
 				<HeroSection id={SECTIONS.hero!.id} />
 				<EditorDemoSection id={SECTIONS.editorDemo!.id} />
 				<HowItHappensSection id={SECTIONS.howItHappens!.id} />
@@ -40,7 +39,7 @@ export default function LandingPage() {
 				<TeamSection id={SECTIONS.team!.id} />
 				<FAQ id={SECTIONS.faq!.id} />
 				<PlaceOrderSection id={SECTIONS.placeOrder!.id} />
-			</main>
+			</Main>
 		</>
 	);
 }

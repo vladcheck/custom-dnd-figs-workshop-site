@@ -1,7 +1,7 @@
-import { H2, H3 } from "../components/headers";
-import Section from "../components/Section";
-import photos from "../db/photos";
-import { PhotoMeta } from "../types";
+import { H2, H3 } from "../../components/headers";
+import Section from "../../components/Section";
+import photos from "../../db/photos";
+import { PhotoMeta } from "../../types";
 
 export default function PhotoGallerySection({ id }: { id: string }) {
 	return (

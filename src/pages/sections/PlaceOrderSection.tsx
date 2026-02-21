@@ -1,7 +1,3 @@
-import { H2 } from "../components/headers";
-import Section from "../components/Section";
-import LabelInputContainer from "../components/LabelInputContainer";
-import Fieldset from "../components/Fieldset";
 import {
 	Dispatch,
 	SetStateAction,
@@ -10,7 +6,11 @@ import {
 	useState,
 } from "react";
 import clsx from "clsx";
-import FileHoverInput from "../components/FileHoverInput";
+import Fieldset from "../../components/Fieldset";
+import FileUploader from "../../components/FileHoverInput";
+import { H2 } from "../../components/headers";
+import LabelInputContainer from "../../components/LabelInputContainer";
+import Section from "../../components/Section";
 
 type City = { label: string; name: string };
 
@@ -27,6 +27,7 @@ export const INPUT_CLASSES =
 
 export default function PlaceOrderSection({ id }: { id: string }) {
 	const [cities, setCities] = useState<City[]>([]);
+	const [files, setFiles] = useState<File[]>([]);
 	const form = useRef<HTMLFormElement>(null);
 	const modelFilesInput = useRef<HTMLInputElement>(null);
 
@@ -43,7 +44,12 @@ export default function PlaceOrderSection({ id }: { id: string }) {
 				method='post'
 				ref={form}
 			>
-				<FileHoverInput ref={modelFilesInput} />
+				<FileUploader
+					inputRef={modelFilesInput}
+					onFilesChange={(f) => {
+						setFiles(f);
+					}}
+				/>
 				<Fieldset legend='ФИО'>
 					<LabelInputContainer htmlFor='name' label='Имя'>
 						<input
@@ -83,13 +89,14 @@ export default function PlaceOrderSection({ id }: { id: string }) {
 				</Fieldset>
 				<Fieldset legend='Адрес'>
 					<LabelInputContainer htmlFor='city' label='Город'>
-						<select className={INPUT_CLASSES} name='city' id='city'>
+						<select
+							className={INPUT_CLASSES}
+							name='city'
+							id='city'
+							defaultValue={"moscow"}
+						>
 							{cities.map((c) => (
-								<option
-									value={c.label}
-									key={c.label}
-									selected={c.label === "moscow"}
-								>
+								<option value={c.label} key={c.label}>
 									{c.name}
 								</option>
 							))}
@@ -150,7 +157,7 @@ export default function PlaceOrderSection({ id }: { id: string }) {
 				</Fieldset>
 				<button
 					onClick={(e) => {
-						if (form.current!.validate()) {
+						if (form.current!.checkValidity()) {
 							e.preventDefault();
 							alert("Заказ успешно оформлен!");
 						}

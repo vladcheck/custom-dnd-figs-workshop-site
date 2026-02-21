@@ -1,7 +1,12 @@
-import { H2, H3 } from "../components/headers";
-import Section from "../components/Section";
+import { H2, H3 } from "../../components/headers";
+import Section from "../../components/Section";
 
-type TeamMember = { key: string; name: string; role: string; src: string };
+type TeamMember = {
+	key: string;
+	name: string;
+	role: string;
+	src: string;
+};
 
 const team: TeamMember[] = [
 	{
@@ -41,8 +46,13 @@ export default function TeamSection({ id }: { id: string }) {
 		<Section id={id}>
 			<H2>Команда</H2>
 			<div className='flex gap-6'>
-				{Object.values(team).map((member) => (
-					<TeamMemberCard {...member} key={member.key} />
+				{Object.values(team).map((m) => (
+					<TeamMemberCard
+						name={m.name}
+						role={m.role}
+						src={m.src}
+						key={m.key}
+					/>
 				))}
 			</div>
 		</Section>

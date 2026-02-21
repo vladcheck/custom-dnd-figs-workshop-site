@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, Links, NavLink } from "react-router";
 
 export default function Header() {
 	return (
@@ -17,6 +17,16 @@ export default function Header() {
 					</Link>
 				</h1>
 			</div>
+			<nav>
+				<ul className='flex gap-6 items-center'>
+					<NavLink to='/' className='uppercase'>
+						Главная
+					</NavLink>
+					<NavLink to='/contacts' className='uppercase'>
+						Контакты
+					</NavLink>
+				</ul>
+			</nav>
 			<button
 				onClick={() => {
 					window.location.href = "/#place-order";

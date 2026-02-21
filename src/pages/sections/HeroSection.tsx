@@ -1,5 +1,5 @@
-import { H2 } from "../components/headers";
-import Section from "../components/Section";
+import { H2 } from "../../components/headers";
+import Section from "../../components/Section";
 
 export default function HeroSection({ id }: { id: string }) {
 	return (
@@ -12,10 +12,11 @@ export default function HeroSection({ id }: { id: string }) {
 						настоящими фигурками?
 					</H2>
 					<p>
-						В своём стремлении повысить качество жизни, они забывают, что
-						глубокий уровень погружения обеспечивает широкому кругу
-						(специалистов) участие в формировании новых принципов формирования
-						материально-технической и кадровой базы.
+						В своём стремлении повысить качество жизни, они забывают,
+						что глубокий уровень погружения обеспечивает широкому
+						кругу (специалистов) участие в формировании новых
+						принципов формирования материально-технической и кадровой
+						базы.
 					</p>
 					<button
 						onClick={() => {
@@ -48,7 +49,9 @@ function SideVideo() {
 					Cocoa Press Cocoapress GIF
 				</a>
 				from
-				<a href='https://tenor.com/search/cocoa+press-gifs'>Cocoa Press GIFs</a>
+				<a href='https://tenor.com/search/cocoa+press-gifs'>
+					Cocoa Press GIFs
+				</a>
 			</div>
 			<script
 				type='text/javascript'
