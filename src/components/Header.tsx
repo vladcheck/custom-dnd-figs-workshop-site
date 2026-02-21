@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { Link, Links, NavLink } from "react-router";
 
 export default function Header() {
@@ -19,10 +20,26 @@ export default function Header() {
 			</div>
 			<nav>
 				<ul className='flex gap-6 items-center'>
-					<NavLink to='/' className='uppercase'>
+					<NavLink
+						to='/'
+						className={({ isActive }) =>
+							clsx(
+								"uppercase",
+								isActive ? "text-white" : "text-gray-500",
+							)
+						}
+					>
 						Главная
 					</NavLink>
-					<NavLink to='/contacts' className='uppercase'>
+					<NavLink
+						to='/contacts'
+						className={({ isActive }) =>
+							clsx(
+								"uppercase",
+								isActive ? "text-white" : "text-gray-500",
+							)
+						}
+					>
 						Контакты
 					</NavLink>
 				</ul>
